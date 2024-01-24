@@ -1,19 +1,10 @@
 import React from "react";
-import {Box, Flex, HStack} from "@chakra-ui/react";
 import Logo from "../Pictures/Logo.png"
 import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <Box maxWidth="1280px" margin="0 auto">
-          <HStack
-          px={16}
-          py={4}
-          justifyContent="space-between"
-          alignItems="center"
-          >
         <div>
-        <HStack spacing={40}>
             <img src={Logo} height={"100px"} alt="Little Lemon Logo"/>
             <nav>
                 <p>Menu</p>
@@ -24,7 +15,7 @@ const Footer = () => {
                 <li><Link to="/">Reservations</Link></li>
                 <li><Link to="/">Order Online</Link></li>
                 <li><Link to="/">Login</Link></li>
-            </ul>
+                </ul>
             </nav>
             <nav>
                 <p>Contact us</p>
@@ -42,10 +33,7 @@ const Footer = () => {
                     <li>linkedin</li>
                 </ul>
             </nav>
-            </HStack>
         </div>
-        </HStack>
-        </Box>
     )
   };
 
