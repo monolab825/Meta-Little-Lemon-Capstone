@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&family=Markazi+Text:wght@400;500&display=swap');
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla', sans-serif, "markazi text", sans-serif;
   font-size: 18pt;
   color: #333333;
 }

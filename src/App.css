@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&family=Markazi+Text:wght@400;500&display=swap');
+
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
@@ -7,7 +9,7 @@ body, h1, h2, p, ul, li {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
 }
@@ -62,6 +64,158 @@ font-weight: bold;
   }
 
   nav li {
-    margin: 10px 0; /* Adjust the space between navigation items on smaller screens */
+    margin: 10px 0;
+  }
+}
+
+/*Intro panel with the story and picture*/
+
+.container {
+  height: 280px;
+  background-color: #495E57;
+  justify-content: center;
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-wrap: wrap;
+  }
+}
+.text-photo {
+  display: flex;
+  margin-block: 20px;
+  width: auto;
+  margin-inline: 20vw;
+}
+
+@media (max-width: 800px) {
+  .text-photo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+article {
+  font-family: 'Markazi Text';
+  color: #edefee;
+}
+
+h1 {
+  font-size: 40px;
+  color: #f4ce14;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.intro-text {
+  font-size: 20px;
+}
+
+h2,
+p,
+button {
+  margin-bottom: 20px; /* Add bottom margin to each element within the article */
+}
+
+.button {
+  background-color: #f4ce14;
+  width: 168px;
+  height: 41px;
+  border-radius: 16px;
+  font-family: "Karla" bold;
+  font-weight: 600;
+  color: #495E57;
+  border: #f4ce14;
+}
+
+.food-photo img {
+  margin-left: 10px;
+  width: 280px;
+  border-radius: 16px;
+}
+
+@media (max-width: 800px) {
+  .text-photo {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
+    margin: 1em;
+  }
+}
+
+/* Meal Cards */
+
+.meal-card {
+  width: 250px;
+  height: 350px;
+  flex-direction: column;
+  background-color: #495E57;
+  border-radius: 16px;
+  margin-right: 4px;
+}
+
+.meal-card img {
+  width: 250px;
+  height: 150px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+div .description {
+margin-left: 12px;
+}
+
+div .description h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+div .description h2 {
+    font-size: 12px;
+    color: #000000;
+    font-weight: 200;
+}
+
+div h1 #price {
+  color: black;
+  margin-left: 2em;
+}
+
+.meal-cards #specials {
+ margin-inline: 20vw;
+ margin-top: 7.5vw;
+ font-family: "Markazi text";
+ color: #333333;
+}
+
+#button2 {
+  margin-left: 23.5vw;
+}
+
+div .meals {
+  display: inline-flex;
+  margin-inline: 20vw;
+}
+
+#button3 {
+  margin-left: 2.5em;
+}
+
+@media (max-width: 800px) {
+  div .meals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
   }
 }

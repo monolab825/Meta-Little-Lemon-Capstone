@@ -19,7 +19,7 @@ const meals = [
     },
     {
         getImageSrc: () => require("../Pictures/lemon dessert.jpg"),
-        title: "Greek Salad",
+        title: "Lemon cake",
         price: "$12.99",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 
@@ -27,10 +27,12 @@ const meals = [
 ]
 const MealCards = () => {
     return (
-        <Box
-        display="flex"
-        padding="100px"
-        >
+        <body className="meal-cards">
+            <h1 id="specials">
+            This Week's Specials
+            <button className="button" id="button2">Order Online</button>
+            </h1>
+            <div className="meals">
             {meals.map((meal) => (
                 <Meal
                 key={meal.title}
@@ -40,7 +42,8 @@ const MealCards = () => {
                 imageSrc={meal.getImageSrc()}
                 />
             ))}
-        </Box>
+            </div>
+        </body>
     );
 }
 
