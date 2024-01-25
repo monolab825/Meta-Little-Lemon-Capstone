@@ -1,4 +1,67 @@
-.App {
-  display: flex;
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
 }
 
+/* Navigation */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo img {
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Karla", sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-right: 20px;
+  color: #495E57;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #495E57;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.active-link {
+font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 10px; /* Adjust the space between logo and navigation on smaller screens */
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav li {
+    margin: 10px 0; /* Adjust the space between navigation items on smaller screens */
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Components/Header';
+import NavigationBar from "../Components/NavigationBar"
 import ReservationPage from '../Components/ReservationPage';
 import Footer from "../Components/Footer"
 
 const Reservation = () => {
   return (
     <>
-      <Header />
+      <NavigationBar />
       <ReservationPage />
       <Footer />
     </>
