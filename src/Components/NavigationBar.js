@@ -1,6 +1,5 @@
 
 import React from "react";
-import {Box, Flex, HStack} from "@chakra-ui/react";
 import LittleLemon from '../Pictures/LittleLemon.png'
 import { NavLink } from "react-router-dom";
 

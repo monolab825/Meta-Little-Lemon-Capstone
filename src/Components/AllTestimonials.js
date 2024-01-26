@@ -1,43 +1,48 @@
 import React from "react";
-import {Box, Flex} from "@chakra-ui/react";
 import Testimony from "./Testimony"
 import profile1 from "../Pictures/profile1.png"
 import profile2 from  "../Pictures/profile2.png"
 import profile3 from "../Pictures/profile3.png"
 import profile4 from "../Pictures/profile4.png"
 import profile5 from "../Pictures/profile5.png"
-
+import fourstar from "../Pictures/fourstar.png"
+import fivestar from "../Pictures/fivestar.jpg"
 
 const testimonials = [
     {
-        getImageSrc: () => require("../Pictures/profile1.png"),
+        profileImageSrc() {return profile1},
+        ratingImageSrc() {return fivestar},
         profile: "Kyle",
         rating: "Rating:",
         review: "Greek salad was delicious, I highly recommend this place",
     },
     {
-        getImageSrc() {return profile2},
+        profileImageSrc() {return profile2},
+        ratingImageSrc() {return fivestar},
         profile: "Monika",
         rating: "Rating:",
         review: "Amazing atmosphere, great people, tasty food, what else could you ask for?",
 
     },
     {
-        getImageSrc() {return profile3},
+        profileImageSrc() {return profile3},
+        ratingImageSrc() {return fourstar},
         profile: "Simone",
         rating: "Rating:",
         review: "The fish was a bit too salty for my liking, but the started and the dessert were delicious and I will definately come back",
 
     },
     {
-        getImageSrc() {return profile4},
+        profileImageSrc() {return profile4},
+        ratingImageSrc() {return fivestar},
         profile: "Gertruda",
         rating: "Rating:",
         review: "The Lemon Cake is to die for. Restaurant has a great location and easy parking also",
 
     },
     {
-        getImageSrc() {return profile5},
+        profileImageSrc() {return profile5},
+        ratingImageSrc() {return fivestar},
         profile: "Matylda",
         rating: "Rating:",
         review: "Really nice, family friendly restaurant, with good food and decent prices. I recommend!",
@@ -58,7 +63,8 @@ const AllTestimonials = () => {
                 profile={testimony.profile}
                 rating={testimony.rating}
                 review={testimony.review}
-                imageSrc={testimony.getImageSrc()}
+                profileImageSrc={testimony.profileImageSrc()}
+                ratingImageSrc={testimony.ratingImageSrc()}
                 />
             ))}
             </div>

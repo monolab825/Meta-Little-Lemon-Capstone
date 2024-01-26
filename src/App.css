@@ -224,19 +224,19 @@ div .meals {
 /* Testimonials */
 
 .profile-photo img {
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .profile-photo {
-  align-items: center;
-  margin-left: 15px;
+  margin-left: 20px;
+  margin-bottom: 5px;
 }
 
 .testimony-card {
-  width: 130px;
-  height: 255px;
+  width: 125px;
+  height: 270px;
   flex-direction: column;
   background-color: #edefee;
   border-radius: 16px;
@@ -248,7 +248,6 @@ div .meals {
 
 .testimony-map {
   display: inline-flex;
-  text-wrap: wrap;
   margin-inline: 20vw;
 }
 
@@ -257,3 +256,157 @@ div .meals {
 #profile-name {
   font-size: 12px;
 }
+
+#rating img {
+  width: 8vw;
+  margin-top: 6px;
+  margin-left: 4px;
+}
+
+@media (max-width: 800px) {
+  .testimony-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+  }
+}
+
+/* About */
+
+.container2 {
+  background-color: #edefee;
+  margin-block: 5vw;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  position: relative;
+}
+
+.about {
+  width: 370px;
+  margin-block: 3vw;
+  margin-left: 20vw;
+  text-wrap: wrap;
+}
+
+.about article h2 {
+  font-size: 24px;
+  color: #333333;
+}
+
+.about article p {
+  color: #333333;
+  font-size: 18px;
+}
+
+.owner-photos {
+  display: flex;
+  flex-direction: column;
+  margin-block: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#owner1 {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(220%);
+  border-radius: 16px;
+}
+
+#owner2 {
+  width: 300px;
+  margin-top: 10px;
+  position: absolute;
+  top: 4vw;
+  left: 50%;
+  transform: translateX(250%);
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  #owner1 {
+    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    position: relative;
+    left: 0;
+    transform: translateX(50%);
+  }
+  #owner2 {
+    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    position: absolute;
+    left: 4vw;
+    top: 4vw;
+    transform: translateX(50%);
+  }
+  .owner-photos {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    position: relative;
+    left: 0;
+    transform: translateX(-60%);
+  }
+  .container2 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative
+  }
+  .about article {
+    width: 90%;
+    margin-block: 3vw;
+    align-items: center;
+  }
+
+}
+/*Footer*/
+
+.footer {
+  background-color: #495E57;
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-inline: 20vw;
+}
+}
+
+#logo {
+  margin-top: 30px;
+}
+
+.footer h3 {
+  font-family: "Karla";
+  font-size: 18px;
+  color: #edefee;
+}
+
+.footer-nav ul,
+.contact ul,
+.socials ul {
+    list-style: none;
+    color: #edefee;
+    font-size: 14px;
+  }
+
+  .foot-link {
+    text-decoration: none;
+    color: #edefee;
+    font-weight: 500;
+  }
+
+  .foot-link:hover,
+  .active-link {
+  font-weight: bold;
+  }
