@@ -373,6 +373,7 @@ div .meals {
 
 .footer {
   background-color: #495E57;
+}
 
 .footer-content {
   display: flex;
@@ -380,10 +381,12 @@ div .meals {
   padding: 10px;
   margin-inline: 20vw;
 }
+.footer li {
+  margin-top: 4px;
 }
 
-#logo {
-  margin-top: 30px;
+#logo2 img {
+  margin-top: 40px;
 }
 
 .footer h3 {
@@ -409,4 +412,12 @@ div .meals {
   .foot-link:hover,
   .active-link {
   font-weight: bold;
+  }
+
+  @media (max-width: 800px) {
+    .footer-content {
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+    }
   }
