@@ -25,7 +25,7 @@ const meals = [
 
     }
 ]
-const MealCards = () => { 
+const MealCards = () => {
     return (
         <body className="meal-cards">
             <h1 id="specials">
