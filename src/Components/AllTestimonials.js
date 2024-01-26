@@ -1,51 +1,57 @@
 import React from "react";
 import {Box, Flex} from "@chakra-ui/react";
 import Testimony from "./Testimony"
+import profile1 from "../Pictures/profile1.png"
+import profile2 from  "../Pictures/profile2.png"
+import profile3 from "../Pictures/profile3.png"
+import profile4 from "../Pictures/profile4.png"
+import profile5 from "../Pictures/profile5.png"
 
 
 const testimonials = [
     {
-        getImageSrc: () => require("../Pictures/greek salad.jpg"),
+        getImageSrc: () => require("../Pictures/profile1.png"),
         profile: "Kyle",
-        rating: "Rating: 5",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        rating: "Rating:",
+        review: "Greek salad was delicious, I highly recommend this place",
     },
     {
-        getImageSrc: () => require("../Pictures/greek salad.jpg"),
-        profile: "Idiot",
-        rating: "Rating: 5",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        getImageSrc() {return profile2},
+        profile: "Monika",
+        rating: "Rating:",
+        review: "Amazing atmosphere, great people, tasty food, what else could you ask for?",
 
     },
     {
-        getImageSrc: () => require("../Pictures/greek salad.jpg"),
+        getImageSrc() {return profile3},
         profile: "Simone",
-        rating: "Rating: 5",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        rating: "Rating:",
+        review: "The fish was a bit too salty for my liking, but the started and the dessert were delicious and I will definately come back",
 
     },
     {
-        getImageSrc: () => require("../Pictures/greek salad.jpg"),
+        getImageSrc() {return profile4},
         profile: "Gertruda",
-        rating: "Rating: 5",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        rating: "Rating:",
+        review: "The Lemon Cake is to die for. Restaurant has a great location and easy parking also",
 
     },
     {
-        getImageSrc: () => require("../Pictures/greek salad.jpg"),
+        getImageSrc() {return profile5},
         profile: "Matylda",
-        rating: "Rating: 5",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        rating: "Rating:",
+        review: "Really nice, family friendly restaurant, with good food and decent prices. I recommend!",
 
     },
 
 ]
 const AllTestimonials = () => {
     return (
-        <Box
-        display="flex"
-        padding="100px"
-        >
+        <body className="testimonials">
+            <h1 id="testimonials">
+            Testimonials
+            </h1>
+            <div className="testimony-map">
             {testimonials.map((testimony) => (
                 <Testimony
                 key={testimony.profile}
@@ -55,7 +61,8 @@ const AllTestimonials = () => {
                 imageSrc={testimony.getImageSrc()}
                 />
             ))}
-        </Box>
+            </div>
+        </body>
     );
 }
 

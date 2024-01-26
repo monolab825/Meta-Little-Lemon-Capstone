@@ -1,6 +1,6 @@
 import React from "react";
-import {Box} from "@chakra-ui/react";
 import Meal from "./Meal"
+
 
 
 const meals = [
@@ -25,7 +25,7 @@ const meals = [
 
     }
 ]
-const MealCards = () => {
+const MealCards = () => { 
     return (
         <body className="meal-cards">
             <h1 id="specials">

@@ -190,7 +190,8 @@ div h1 #price {
   margin-left: 2em;
 }
 
-.meal-cards #specials {
+.meal-cards #specials,
+#testimonials {
  margin-inline: 20vw;
  margin-top: 7.5vw;
  font-family: "Markazi text";
@@ -218,4 +219,41 @@ div .meals {
     justify-content: center;
     margin: 1em;
   }
+}
+
+/* Testimonials */
+
+.profile-photo img {
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-photo {
+  align-items: center;
+  margin-left: 15px;
+}
+
+.testimony-card {
+  width: 130px;
+  height: 255px;
+  flex-direction: column;
+  background-color: #edefee;
+  border-radius: 16px;
+  margin-right: 4px;
+  padding: 10px;
+  border: solid #333333;
+  margin-top: 20px;
+}
+
+.testimony-map {
+  display: inline-flex;
+  text-wrap: wrap;
+  margin-inline: 20vw;
+}
+
+#review,
+#rating,
+#profile-name {
+  font-size: 12px;
 }

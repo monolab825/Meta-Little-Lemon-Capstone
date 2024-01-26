@@ -1,19 +1,22 @@
-import { Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
+
 
 const Testimony = ({ rating, imageSrc, profile, review }) => {
   return (
-    <div>
-        <heading>
+    <body className="testimony-card">
+        <h2 id="rating">
             {rating}
-        </heading>
-        <img src={imageSrc} style={{borderRadius: "6px"}} height={"100px"}/>
-        <h2>
+        </h2>
+        <div className="profile-photo">
+        <img src={imageSrc}/>
+        </div>
+        <h2 id="profile-name">
           {profile}
         </h2>
+          <p id="review">
           {review}
-          <p style={{fontWeight: "bold", marginTop: "10px"}}></p>
-    </div>
+          </p>
+    </body>
  );
 };
 
