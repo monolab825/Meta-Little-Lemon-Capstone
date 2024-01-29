@@ -1,4 +1,4 @@
-import NavigationBar from "../Components/NavigationBar"
+import NavigationBar from "../Components/NavigationBar";
 import MealCards from '../Components/MealCards';
 import About from '../Components/About'
 import Footer from '../Components/Footer';

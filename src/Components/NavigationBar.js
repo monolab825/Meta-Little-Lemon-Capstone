@@ -1,5 +1,6 @@
 
 import React from "react";
+import Reservation from "../Routes/Reservation";
 import LittleLemon from '../Pictures/LittleLemon.png'
 import { NavLink } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const Header = () => {
                     <li><NavLink to="/" activeClassName="active-link" className="nav-link">Home</NavLink></li>
                     <li><NavLink to="/" activeClassName="active-link" className="nav-link">About</NavLink></li>
                     <li><NavLink to="/" activeClassName="active-link" className="nav-link">Menu</NavLink></li>
-                    <li><NavLink to="/" activeClassName="active-link" className="nav-link">Reservations</NavLink></li>
+                    <li><NavLink to="/reservation" activeClassName="active-link" className="nav-link">Reservations</NavLink></li>
                     <li><NavLink to="/" activeClassName="active-link" className="nav-link">Order Online</NavLink></li>
                     <li><NavLink to="/" activeClassName="active-link" className="nav-link">Login</NavLink></li>
             </ul>
