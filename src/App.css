@@ -127,8 +127,13 @@ button {
   font-weight: 600;
   color: #495E57;
   border: #f4ce14;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
+.button:hover {
+  background-color: #fbdabb;
+  color: #333333;
+}
 .food-photo img {
   margin-left: 10px;
   width: 280px;
@@ -303,7 +308,7 @@ div .meals {
 
 .container2 {
   background-color: #edefee;
-  margin-bottom: 5vw;
+  margin-block: 5vw;
   width: 100%;
   height: auto;
   display: flex;
@@ -806,14 +811,14 @@ div .meals {
 
 @media screen and (max-width: 700px) {
   #owner1 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    max-width: 100%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: relative;
     left: 0;
     transform: translateX(0%);
   }
   #owner2 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    max-width: 100%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: absolute;
     left: 4vw;
@@ -839,6 +844,7 @@ div .meals {
     transform: translateX(-10%);
   }
 }
+
 /*Footer*/
 
 .footer {
@@ -856,10 +862,6 @@ div .meals {
   margin-bottom: 4px;
 }
 
-#logo2 img {
-  margin-top: 40px;
-}
-
 .footer h3 {
   font-family: "Karla";
   font-size: 18px;
@@ -912,6 +914,16 @@ div .meals {
     font-size: 14px;
   }
 
+  .social_link {
+    text-decoration: none;
+    color: #edefee;
+    font-weight: 500;
+  }
+
+  .social-link:hover {
+    font-weight: 800;
+  }
+
   .foot-link {
     text-decoration: none;
     color: #edefee;
@@ -930,3 +942,91 @@ div .meals {
       text-align: center;
     }
   }
+
+  /* Picture Placement */
+
+
+  .picture_container {
+    display: flex;
+    padding: 3vw;
+    justify-content: center;
+    background-color: #495E57;
+  }
+
+  .photo1 img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+
+  /* Form */
+
+  .form {
+    padding: 6vw;
+    margin-inline: 10vw;
+  }
+
+  .form p {
+    font-size: 18px;
+    font-family: "Karla";
+  }
+
+  .field_date label,
+  .field_guests label,
+  .field_occasion label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #edefee;
+  }
+
+  fieldset {
+    background-color: #495E57;
+    border-radius: 16px;
+    border: #495E57 solid;
+  }
+
+  .field_date input,
+  .field_guests input,
+  .field_occasion input {
+    width: 90%;
+    height: 20px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    border:#495E57 solid;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    font-family: "Karla";
+  }
+
+  .field_occasion select {
+    width: 90%;
+    height: 40px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    border:#495E57 solid;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    font-family: "Karla";
+  }
+
+ .field {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .button-container {
+  align-items: center;
+  text-align: center;
+}
+
+/* Confirmation page */
+
+.congrats-container {
+  padding: 6vw;
+  margin-inline: 10vw;
+  text-align: center;
+}

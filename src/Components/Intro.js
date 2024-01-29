@@ -1,5 +1,6 @@
 import React from "react";
 import restaurantfood from "../Pictures/restauranfood.jpg"
+import { Link } from "react-router-dom";
 
 const Intro = () => {
 
@@ -13,7 +14,9 @@ const Intro = () => {
                     We are a family owned Mediterranean restaurant,
                     focused on traditional recipes served with a modern twist.
                 </p>
+                <Link to="/reservation">
                 <button className="button">Reserve a table</button>
+                </Link>
             </article>
                 <div class="food-photo">
                     <img src={restaurantfood} alt="Picture of restaurant food" />
