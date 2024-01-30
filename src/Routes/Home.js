@@ -12,6 +12,7 @@ const Home = () => {
       <Intro />
       <MealCards />
       <AllTestimonials />
+      <About />
       <Footer />
     </>
   );

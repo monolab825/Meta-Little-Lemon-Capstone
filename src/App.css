@@ -269,18 +269,16 @@ div .meals {
 /* About */
 
 .container2 {
-  display: flex;
-  flex-direction: column;
   background-color: #edefee;
   margin-block: 5vw;
   width: 100%;
   height: auto;
+  display: flex;
   position: relative;
 }
 
-.about article {
-  width: 100%;
-  text-align: center;
+.about {
+  width: 360px;
   margin-block: 3vw;
   margin-left: 20vw;
   text-wrap: wrap;
@@ -297,9 +295,7 @@ div .meals {
 }
 
 .owner-photos {
-  margin-block: 20px;
-  top: 0;
-  left: 0;
+  margin-bottom: 40px;
 }
 
 #owner1 {
@@ -356,19 +352,18 @@ div .meals {
     margin-block: 3vw;
     transform: translateX(21%);
   }
-
 }
 
 @media screen and (max-width: 700px) {
   #owner1 {
-    max-width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 100%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: relative;
     left: 0;
     transform: translateX(0%);
   }
   #owner2 {
-    max-width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 100%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: absolute;
     left: 4vw;
@@ -385,7 +380,7 @@ div .meals {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: auto;
     position: relative;
   }
   .about article {
@@ -445,6 +440,7 @@ div .meals {
     }
   }
 
+
 #logo2 img {
   margin-top: 40px;
 }
@@ -457,6 +453,14 @@ div .meals {
 
   .social-link:hover {
     font-weight: 800;
+  }
+
+  @media (max-width: 800px) {
+    .footer-content {
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   /* Picture Placement */
