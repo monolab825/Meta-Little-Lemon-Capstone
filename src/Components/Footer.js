@@ -17,7 +17,7 @@ const Footer = () => {
                         <li><NavLink to="/" activeClassName="active-link" className="foot-link">Home</NavLink></li>
                         <li><ScrollLink to="about" spy={true} smooth={true} offset={-70} duration={500} activeClassName="active-link" className="foot-link">About</ScrollLink></li>
                         <li><ScrollLink to="meal-cards" spy={true} smooth={true} offset={-70} duration={500} activeClassName="active-link" className="foot-link">Menu</ScrollLink></li>
-                        <li><NavLink to="/reservation" activeClassName="active-link" className="foot-link">Reservations</NavLink></li>
+                        <li><NavLink to="/booking-page" activeClassName="active-link" className="foot-link">Reservations</NavLink></li>
                         <li><ScrollLink to="meal-cards" spy={true} smooth={true} offset={-70} duration={500} activeClassName="active-link" className="foot-link">Order Online</ScrollLink></li>
                         <li><NavLink to="/" activeClassName="active-link" className="foot-link">Login</NavLink></li>
                     </ul>

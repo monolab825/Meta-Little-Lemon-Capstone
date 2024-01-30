@@ -483,6 +483,7 @@ div .meals {
   }
 
   .field_date label,
+  .field_time label,
   .field_guests label,
   .field_occasion label {
     display: block;
@@ -499,6 +500,7 @@ div .meals {
   }
 
   .field_date input,
+  .field_time input,
   .field_guests input,
   .field_occasion input {
     width: 90%;
@@ -511,8 +513,8 @@ div .meals {
     font-family: "Karla";
   }
 
-  .field_occasion select {
-    width: 90%;
+  .field_occasion select,
+  .field_time select {
     height: 40px;
     padding: 8px;
     margin-bottom: 16px;

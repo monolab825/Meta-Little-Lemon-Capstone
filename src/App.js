@@ -1,6 +1,6 @@
 import "./App.css"
 import Home from "./Routes/Home"
-import Reservation from "./Routes/Reservation"
+import BookingPage from "./Routes/BookingPage"
 import Confirmation from "./Routes/Confirmation"
 import { Route, Routes } from "react-router-dom"
 
@@ -9,7 +9,7 @@ function App() {
     <>
     <Routes>
       <Route path = "/" element = {<Home />}/>
-      <Route path = "/reservation" element = {<Reservation />}/>
+      <Route path = "/booking-page" element = {<BookingPage />}/>
       <Route path = "/confirmation" element = {<Confirmation />}/>
       </Routes>
     </>

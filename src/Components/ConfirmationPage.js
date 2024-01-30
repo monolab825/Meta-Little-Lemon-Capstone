@@ -13,7 +13,7 @@ const ConfirmationPage = () => {
                 </p>
                 <p>Thank you and see you soon</p>
                     <div className="button_sec">
-                        <Link to="/reservation">
+                        <Link to="/booking-page">
                             <button className="button">Go Back</button>
                         </Link>
                         <Link to="/">
