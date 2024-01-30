@@ -8,7 +8,10 @@ const Confirmation = () => {
   return (
     <>
         <NavigationBar />
-        <Pictureplacement />
+        <Pictureplacement
+          imageSrc={require('../Pictures/restaurant.jpg')}
+          altText={"Picture of the restaurant"}
+        />
         <ConfirmationPage />
         <Footer />
     </>

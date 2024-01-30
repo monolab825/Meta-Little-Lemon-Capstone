@@ -267,7 +267,6 @@ div .meals {
   }
 
 /* About */
-
 .container2 {
   background-color: #edefee;
   margin-block: 5vw;
@@ -278,7 +277,7 @@ div .meals {
 }
 
 .about {
-  width: 360px;
+  width: 30vw;
   margin-block: 3vw;
   margin-left: 20vw;
   text-wrap: wrap;
@@ -318,74 +317,60 @@ div .meals {
   border-radius: 16px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
+  .about {
+    width: 60%;
+    margin-block: 3vw;
+    margin-left: 20vw;
+  }
   #owner1 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 60%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: relative;
     left: 0;
-    transform: translateX(30%);
+    transform: translateX(35%);
   }
   #owner2 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 60%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: absolute;
     left: 4vw;
-    top: 4vw;
-    transform: translateX(30%);
+    top: 6vw;
+    transform: translateX(60%);
   }
   .owner-photos {
     max-width: 100%;
     height: auto;
     left: 0;
     transform: translateX(-10%);
-  }
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    position: relative;
-  }
-  .about article {
-    width: 100%;
-    margin-block: 3vw;
-    transform: translateX(21%);
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+  .about {
+    width: 60%;
+    margin-block: 3vw;
+    margin-left: 20vw;
+  }
   #owner1 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 80%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: relative;
     left: 0;
-    transform: translateX(0%);
+    transform: translateX(10%);
   }
   #owner2 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
+    width: 80%; /* Make the images fill the width of their container on smaller screens */
     height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
     position: absolute;
     left: 4vw;
-    top: 4vw;
-    transform: translateX(0%);
+    top: 6vw;
+    transform: translateX(30%);
   }
   .owner-photos {
     max-width: 100%;
     height: auto;
     left: 0;
-    transform: translateX(-10%);
-  }
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: auto;
-    position: relative;
-  }
-  .about article {
-    width: 100%;
-    margin-block: 3vw;
     transform: translateX(-10%);
   }
 }
@@ -440,7 +425,6 @@ div .meals {
     }
   }
 
-
 #logo2 img {
   margin-top: 40px;
 }
@@ -465,27 +449,32 @@ div .meals {
 
   /* Picture Placement */
 
-
   .picture_container {
     display: flex;
-    padding: 3vw;
+    padding: 1vw;
     justify-content: center;
     background-color: #495E57;
   }
 
   .photo1 img {
-    max-width: 70%;
-    height: auto;
+    max-width: 60%;
     display: block;
     margin: 0 auto;
     border-radius: 16px;
+  }
+
+  @media (max-width: 800px) {
+    .photo1 img {
+      max-width: 95%;
+      margin-block: 1vw;
+    }
   }
 
   /* Form */
 
   .form {
     padding: 6vw;
-    margin-inline: 10vw;
+    margin-inline: 14vw;
   }
 
   .form p {
@@ -549,4 +538,10 @@ div .meals {
   padding: 6vw;
   margin-inline: 10vw;
   text-align: center;
+}
+
+.button_sec {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
 }

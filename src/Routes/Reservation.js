@@ -8,7 +8,10 @@ const Reservation = () => {
   return (
     <>
         <NavigationBar />
-        <Pictureplacement />
+        <Pictureplacement
+          imageSrc={require('../Pictures/restaurant chef B.jpg')}
+          altText={"Picture of the chef preparing a food in the restaurant"}
+        />
         <ReservationPage />
         <Footer />
     </>

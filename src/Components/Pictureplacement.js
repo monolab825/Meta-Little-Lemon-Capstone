@@ -1,13 +1,11 @@
 import React from "react";
-import Chef from "../Pictures/restaurant chef B.jpg"
 
-
-const Pictureplacement = () => {
+const Pictureplacement = ({ imageSrc, altText }) => {
 
     return (
         <body className="picture_container">
                 <div class="photo1">
-                    <img src={Chef} alt="Picture of a chef prepering food" />
+                    <img src={imageSrc} alt={altText} />
                 </div>
         </body>
     )
