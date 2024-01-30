@@ -115,7 +115,7 @@ h2 {
 h2,
 p,
 button {
-  margin-bottom: 20px; /* Add bottom margin to each element within the article */
+  margin-bottom: 20px;
 }
 
 .button {
@@ -152,569 +152,119 @@ button {
 
 /* Meal Cards */
 
+.meal-card img {
+  width: 250px;
+  height: 170px;
+  border-radius: 16px;
+}
+
 .meal-card {
   width: 250px;
   height: 350px;
   flex-direction: column;
   background-color: #495E57;
   border-radius: 16px;
-  margin-right: 4px;
+  justify-content: center;
+  margin-right: 0.5vw;
 }
 
-.meal-card img {
-  width: 250px;
-  height: 150px;
-  border-radius: 16px;
-  margin-bottom: 10px;
+.description {
+  margin-left: 1.5vw;
+  margin-bottom: 1vw;
+  margin-right: 2vw;
+  margin-top: 1vw;
 }
-
-div .description {
-margin-left: 12px;
-}
-
-div .description h1 {
+div .description h1{
   font-size: 18px;
   margin-bottom: 10px;
 }
-
 div .description h2 {
-    font-size: 12px;
-    color: #edefee;
-    font-weight: 200;
+  font-size: 12px;
+  color:#edefee;
+  font-weight: 200;
 }
-
-div h1 #price {
-  color: black;
-  margin-left: 2em;
-}
-
-.meal-cards #specials,
-#testimonials {
- margin-inline: 20vw;
- margin-top: 7.5vw;
- font-family: "Markazi text";
- color: #333333;
+.meal-cards #specials {
+  margin-top: 10vw;
+  margin-left: 20vw;
+  font-family: "Markazi text";
+  color: #333333;
 }
 
 #button2 {
-  margin-left: 23.5vw;
+  margin-left: 20vw;
 }
 
 div .meals {
-  display: inline-flex;
-  margin-inline: 20vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin-bottom: 2em;
+  margin-left: 20vw;
+  margin-right: 20vw;
 }
 
 #button3 {
-  margin-left: 2.5em;
+  margin-left: 2em;
 }
 
-@media (max-width: 992px) {
-  div .meals {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
+/* Testimonials */
+
+#testimonials {
+  margin-top: 2vw;
+  margin-left: 20vw;
+  font-family: "Markazi text";
+  color: #333333;
+}
+
+.testimony-card {
+  display: flex;
+  width: 125px;
+  height: 270px;
+  flex-direction: column;
+  background-color: #edefee;
+  border-radius: 16px;
+  margin-right: 4px;
+  padding: 10px;
+  border: solid #333333;
+  margin-top: 20px;
+}
+
+.testimony-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1vw;
+  padding: 1rem;
+  margin-inline: 19vw;
+  margin-bottom: 1vw;
+}
+
+.profile-photo img {
+  width: 80px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#rating img {
+  width: 80px;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+#review,
+#rating,
+#profile-name {
+    font-size: 12px;
   }
 
-  @media (max-width: 992px) {
-    div .meals {
+  @media (max-width: 576px) {
+    .testimony-map {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
       align-items: center;
       justify-content: center;
+      margin-left: 3rem;
     }
   }
-
-}
-
-@media (max-width: 576px) {
-  div .meals {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    margin-left: 24vw;
-  }
-}
-
-/* Testimonials */
-
-.profile-photo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-photo {
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
-
-.testimony-card {
-  display: flex;
-  width: 125px;
-  height: 270px;
-  flex-direction: column;
-  background-color: #edefee;
-  border-radius: 16px;
-  margin-right: 4px;
-  padding: 10px;
-  border: solid #333333;
-  margin-top: 20px;
-}
-
-.testimony-map {
-  display: inline-flex;
-  margin-inline: 20vw;
-  height: auto;
-  width: auto;
-}
-
-#review,
-#rating,
-#profile-name {
-  font-size: 12px;
-}
-
-#rating img {
-  width: 8vw;
-  margin-top: 6px;
-  margin-left: 4px;
-}
-
-@media (max-width: 992px) {
-  .testimony-map {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-    padding: 1vw;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .testimony-map {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* About */
-
-.container2 {
-  background-color: #edefee;
-  margin-block: 5vw;
-  width: 100%;
-  height: auto;
-  display: flex;
-  position: relative;
-}
-
-.about {
-  width: 360px;
-  margin-block: 3vw;
-  margin-left: 20vw;
-  text-wrap: wrap;
-}
-
-.about article h2 {
-  font-size: 24px;
-  color: #333333;
-}
-
-.about article p {
-  color: #333333;
-  font-size: 18px;
-}
-
-.owner-photos {
-  margin-bottom: 40px;
-}
-
-#owner1 {
-  width: 300px;
-  height: auto;
-  position: absolute;
-  top: 2vw;
-  left: 0%;
-  transform: translateX(220%);
-  border-radius: 16px;
-}
-
-#owner2 {
-  width: 300px;
-  margin-top: 10px;
-  position: absolute;
-  top: 4vw;
-  left: -4%;
-  transform: translateX(250%);
-  border-radius: 16px;
-}
-
-@media screen and (max-width: 1000px) {
-  #owner1 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
-    position: relative;
-    left: 0;
-    transform: translateX(30%);
-  }
-  #owner2 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
-    position: absolute;
-    left: 4vw;
-    top: 4vw;
-    transform: translateX(30%);
-  }
-  .owner-photos {
-    max-width: 100%;
-    height: auto;
-    left: 0;
-    transform: translateX(-10%);
-  }
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    position: relative;
-  }
-  .about article {
-    width: 100%;
-    margin-block: 3vw;
-    transform: translateX(21%);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  #owner1 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
-    position: relative;
-    left: 0;
-    transform: translateX(0%);
-  }
-  #owner2 {
-    width: 100%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
-    position: absolute;
-    left: 4vw;
-    top: 4vw;
-    transform: translateX(0%);
-  }
-  .owner-photos {
-    max-width: 100%;
-    height: auto;
-    left: 0;
-    transform: translateX(-10%);
-  }
-  .container2 {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: auto;
-    position: relative;
-  }
-  .about article {
-    width: 100%;
-    margin-block: 3vw;
-    transform: translateX(-10%);
-  }
-}
-/*Footer*/
-
-.footer {
-  background-color: #495E57;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin-inline: 20vw;
-}
-.footer li {
-  margin-top: 4px;@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;800&family=Markazi+Text:wght@400;500&display=swap');
-
-body, h1, h2, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
-
-/* Navigation */
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.logo img {
-  width: 200px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  font-family: "Karla", sans-serif;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-nav li {
-  margin-right: 20px;
-  color: #495E57;
-  list-style: none;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #495E57;
-  font-weight: 500;
-}
-
-.nav-link:hover,
-.active-link {
-font-weight: bold;
-}
-
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    margin-top: 10px; /* Adjust the space between logo and navigation on smaller screens */
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav li {
-    margin: 10px 0;
-  }
-}
-
-/*Intro panel with the story and picture*/
-
-.container {
-  height: 280px;
-  background-color: #495E57;
-  justify-content: center;
-  display: flex;
-}
-
-@media (max-width: 800px) {
-  .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    text-wrap: wrap;
-  }
-}
-.text-photo {
-  display: flex;
-  margin-block: 20px;
-  width: auto;
-  margin-inline: 20vw;
-}
-
-@media (max-width: 800px) {
-  .text-photo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-article {
-  font-family: 'Markazi Text';
-  color: #edefee;
-}
-
-h1 {
-  font-size: 40px;
-  color: #f4ce14;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-.intro-text {
-  font-size: 20px;
-}
-
-h2,
-p,
-button {
-  margin-bottom: 20px; /* Add bottom margin to each element within the article */
-}
-
-.button {
-  background-color: #f4ce14;
-  width: 168px;
-  height: 41px;
-  border-radius: 16px;
-  font-family: "Karla" bold;
-  font-weight: 600;
-  color: #495E57;
-  border: #f4ce14;
-}
-
-.food-photo img {
-  margin-left: 10px;
-  width: 280px;
-  border-radius: 16px;
-}
-
-@media (max-width: 800px) {
-  .text-photo {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    align-items: center;
-    margin: 1em;
-  }
-}
-
-/* Meal Cards */
-
-.meal-card {
-  width: 250px;
-  height: 350px;
-  flex-direction: column;
-  background-color: #495E57;
-  border-radius: 16px;
-  margin-right: 4px;
-}
-
-.meal-card img {
-  width: 250px;
-  height: 150px;
-  border-radius: 16px;
-  margin-bottom: 10px;
-}
-
-div .description {
-margin-left: 12px;
-}
-
-div .description h1 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-div .description h2 {
-    font-size: 12px;
-    color: #edefee;
-    font-weight: 200;
-}
-
-div h1 #price {
-  color: black;
-  margin-left: 2em;
-}
-
-.meal-cards #specials,
-#testimonials {
- margin-inline: 20vw;
- margin-top: 7.5vw;
- font-family: "Markazi text";
- color: #333333;
-}
-
-#button2 {
-  margin-left: 23.5vw;
-}
-
-div .meals {
-  display: inline-flex;
-  margin-inline: 20vw;
-}
-
-#button3 {
-  margin-left: 2.5em;
-}
-
-@media (max-width: 800px) {
-  div .meals {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
-  }
-}
-
-/* Testimonials */
-
-.profile-photo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-photo {
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
-
-.testimony-card {
-  width: 125px;
-  height: 270px;
-  flex-direction: column;
-  background-color: #edefee;
-  border-radius: 16px;
-  margin-right: 4px;
-  padding: 10px;
-  border: solid #333333;
-  margin-top: 20px;
-}
-
-.testimony-map {
-  display: inline-flex;
-  margin-inline: 20vw;
-}
-
-#review,
-#rating,
-#profile-name {
-  font-size: 12px;
-}
-
-#rating img {
-  width: 8vw;
-  margin-top: 6px;
-  margin-left: 4px;
-}
-
-@media (max-width: 800px) {
-  .testimony-map {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1em;
-  }
-}
 
 /* About */
 
@@ -894,25 +444,10 @@ div .meals {
       text-align: center;
     }
   }
-}
 
 #logo2 img {
   margin-top: 40px;
 }
-
-.footer h3 {
-  font-family: "Karla";
-  font-size: 18px;
-  color: #edefee;
-}
-
-.footer-nav ul,
-.contact ul,
-.socials ul {
-    list-style: none;
-    color: #edefee;
-    font-size: 14px;
-  }
 
   .social_link {
     text-decoration: none;
@@ -922,25 +457,6 @@ div .meals {
 
   .social-link:hover {
     font-weight: 800;
-  }
-
-  .foot-link {
-    text-decoration: none;
-    color: #edefee;
-    font-weight: 500;
-  }
-
-  .foot-link:hover,
-  .active-link {
-  font-weight: bold;
-  }
-
-  @media (max-width: 800px) {
-    .footer-content {
-      flex-wrap: wrap;
-      flex-direction: column;
-      text-align: center;
-    }
   }
 
   /* Picture Placement */
