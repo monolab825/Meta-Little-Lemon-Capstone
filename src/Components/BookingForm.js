@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import React, { useReducer, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import React, { useReducer, useState, useEffect } from 'react';
 
-const BookingForm = ({ onUpdateFormData, availableTimes, onUpdateTimes }) => {
+const BookingForm =  ({availableTimes, updateAvailableTimes}) => {
     const [formData, setFormData] = useState({
         date: '',
         time: 'select',
@@ -12,19 +12,51 @@ const BookingForm = ({ onUpdateFormData, availableTimes, onUpdateTimes }) => {
         telephone: '',
       });
 
- // Handler function to update form field values
- const onChangeHandler = (e) => {
+        const validateEmail = (email) => {
+            return String(email)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+          };
+
+
+const getIsFormValid = () => {
+        const { date, time, guests, name, email } = formData;
+        return date && time && guests.length >= 1 && name && validateEmail(email);
+      };
+
+  const onChangeHandler = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-    onUpdateFormData(formData);
+  };
 
-    // If the input is the date field, update the available times
-    if (name === 'date') {
-        onUpdateTimes(value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (submitForm() === true) {
+        console.log("success");
+        navigate("/confirmation");
+      } else {
+        alert("Error");
       }
+    clearForm()
+  };
+  
+  const navigate = useNavigate();
+
+  const clearForm = () => {
+    setFormData({
+      date: '',
+      time: 'select',
+      guests: '',
+      occasion: 'select',
+      name: '',
+      email: '',
+      telephone: '',
+    });
   };
 
     return (
@@ -33,7 +65,7 @@ const BookingForm = ({ onUpdateFormData, availableTimes, onUpdateTimes }) => {
                 <div className="form">
                     <h1>Reserve a Table</h1>
                     <p>Enter details for your reservation</p>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <fieldset>
                         <div className="field_date">
                         <label htmlFor="date">Date</label>
@@ -123,9 +155,7 @@ const BookingForm = ({ onUpdateFormData, availableTimes, onUpdateTimes }) => {
                             />
                             <span className="non-valid"></span>
                             <div className="button-container">
-                            <Link to="/confirmation">
-                            <button className="button">Reserve a table</button>
-                            </Link>
+                            <button className="button" type='submit' disabled={!getIsFormValid()}>Reserve a table</button>
                             </div>
                         </div>
                         </div>
@@ -138,4 +168,3 @@ const BookingForm = ({ onUpdateFormData, availableTimes, onUpdateTimes }) => {
 }
 
 export default BookingForm;
-
