@@ -1,46 +1,37 @@
 import React from 'react';
-import { useState, useReducer, useEffect } from "react"
+import {useReducer} from "react"
 import Pictureplacement from '../Components/Pictureplacement';
 import NavigationBar from "../Components/NavigationBar"
 import BookingForm from '../Components/BookingForm';
 import Footer from "../Components/Footer";
+import {fetchAPI} from "../Components/Api"
 
-const initializeTimes = () => {
-  // You can customize this function to generate initial times based on your requirements
-  const defaultTimes = [
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-  ];
-
-  // For example, you can add logic to dynamically generate times based on business hours, etc.
-  return defaultTimes;
-};
-
- const availableTimesReducer = (state, action) => {
+const updateTimes = async (state, action) => {
   switch (action.type) {
-    case 'UPDATE_TIMES':
-      return action.payload; // Set availableTimes to the new array
+    case 'update_times':
+      try {
+        const newTimes = await fetchAPI(action.payload);
+        return newTimes;
+      } catch (error) {
+        console.error("Error fetching times:", error);
+        // You might want to handle the error appropriately
+        return state;
+      }
     default:
       return state;
   }
 };
 
+
 const BookingPage = () => {
-  const [availableTimes, dispatch] = useReducer(
-    availableTimesReducer,
-    [],
-    initializeTimes
-  );
+  const initialState = fetchAPI(new Date());
+  const [availableTimes, dispatch] = useReducer(updateTimes, initialState);
 
-  const updateTimes = (selectedDate) => {
-    // For now, let's return the same available times regardless of the date
-    const newAvailableTimes = [...availableTimes];
-    dispatch({ type: 'UPDATE_TIMES', payload: newAvailableTimes });
+  // Function to update times based on a new date
+  const handleDateChange = async (date) => {
+    // Dispatch the action to update availableTimes
+    dispatch({ type: 'update_times', payload: date });
   };
-// useEffect to initialize availableTimes on component mount
-useEffect(() => {
-  dispatch({ type: 'UPDATE_TIMES', payload: initializeTimes() });
-}, []);
-
 
   return (
     <>
@@ -51,7 +42,7 @@ useEffect(() => {
         />
         <BookingForm
         availableTimes={availableTimes}
-        updateAvailableTimes={updateTimes}
+        updateTimes={handleDateChange}
         />
         <Footer />
     </>

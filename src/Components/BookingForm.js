@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useReducer, useState, useEffect } from 'react';
 
-const BookingForm =  ({availableTimes, updateAvailableTimes}) => {
+const BookingForm = (props) => {
     const [formData, setFormData] = useState({
         date: '',
         time: 'select',
@@ -12,52 +12,45 @@ const BookingForm =  ({availableTimes, updateAvailableTimes}) => {
         telephone: '',
       });
 
-        const validateEmail = (email) => {
-            return String(email)
-              .toLowerCase()
-              .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-              );
-          };
+       const validateEmail = (email) => {
+           return String(email)
+             .toLowerCase()
+             .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+             );
+     };
 
 
 const getIsFormValid = () => {
         const { date, time, guests, name, email } = formData;
         return date && time && guests.length >= 1 && name && validateEmail(email);
+     };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        alert('Form Submitted!');
+        clearForm();
       };
-
-  const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (submitForm() === true) {
-        console.log("success");
-        navigate("/confirmation");
-      } else {
-        alert("Error");
-      }
-    clearForm()
-  };
-  
-  const navigate = useNavigate();
-
-  const clearForm = () => {
-    setFormData({
-      date: '',
-      time: 'select',
-      guests: '',
-      occasion: 'select',
-      name: '',
-      email: '',
-      telephone: '',
-    });
-  };
+    
+      const onChangeHandler = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
+    
+      const clearForm = () => {
+        setFormData({
+          date: '',
+          time: 'select',
+          guests: '',
+          occasion: 'select',
+          name: '',
+          email: '',
+          telephone: '',
+        });
+      };
 
     return (
         <div className="res-content-wrapper">
@@ -72,6 +65,7 @@ const getIsFormValid = () => {
                                 <input
                                     type="date"
                                     name="date"
+                                    required
                                     value={formData.date}
                                     onChange={onChangeHandler}
                                 />
@@ -86,10 +80,10 @@ const getIsFormValid = () => {
                                 onChange={onChangeHandler}
                                 >
                                 <option value="select">Choose time</option>
-                                        {availableTimes.map((time) => (
-                                            <option key={time} value={time}>
-                                                {time}
-                                            </option>
+                                    {props.availableTimes.map((time) => (
+                                    <option key={time} value={time}>
+                                    {time}
+                                    </option>
                                         ))}
                                 </select>
                                 <span className="non-valid"></span>
