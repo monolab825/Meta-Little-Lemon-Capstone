@@ -1,36 +1,36 @@
 import React from 'react';
-import {useReducer} from "react"
+import {useReducer, useEffect, useState} from "react"
 import Pictureplacement from '../Components/Pictureplacement';
 import NavigationBar from "../Components/NavigationBar"
 import BookingForm from '../Components/BookingForm';
 import Footer from "../Components/Footer";
-import {fetchAPI} from "../Components/Api"
+import {fetchAPI, submitAPI} from "../Components/Api"
+import { useNavigate } from 'react-router-dom';
 
-const updateTimes = async (state, action) => {
+const updateTimes = (state, action) => {
   switch (action.type) {
     case 'update_times':
-      try {
-        const newTimes = await fetchAPI(action.payload);
-        return newTimes;
-      } catch (error) {
-        console.error("Error fetching times:", error);
-        // You might want to handle the error appropriately
-        return state;
-      }
+      return fetchAPI(new Date(action.payload));
     default:
       return state;
   }
 };
 
-
 const BookingPage = () => {
+  const navigate = useNavigate();
   const initialState = fetchAPI(new Date());
   const [availableTimes, dispatch] = useReducer(updateTimes, initialState);
 
   // Function to update times based on a new date
-  const handleDateChange = async (date) => {
+  const handleDateChange = (date) => {
     // Dispatch the action to update availableTimes
     dispatch({ type: 'update_times', payload: date });
+  };
+
+  const submitForm = (formData) => {
+    if (submitAPI(formData)) {
+      navigate('/confirmed');
+    }
   };
 
   return (
@@ -43,6 +43,7 @@ const BookingPage = () => {
         <BookingForm
         availableTimes={availableTimes}
         updateTimes={handleDateChange}
+        submitForm={submitForm}
         />
         <Footer />
     </>

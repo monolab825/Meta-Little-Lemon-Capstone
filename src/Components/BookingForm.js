@@ -52,6 +52,11 @@ const getIsFormValid = () => {
         });
       };
 
+      const handleDateChange = (e) => {
+        const selectedDate = e.target.value;
+        props.updateTimes(selectedDate); // Trigger the parent component's updateTimes function
+      };
+
     return (
         <div className="res-content-wrapper">
             <div className="res-content-container">
@@ -67,7 +72,10 @@ const getIsFormValid = () => {
                                     name="date"
                                     required
                                     value={formData.date}
-                                    onChange={onChangeHandler}
+                                    onChange={(e) => {
+                                        onChangeHandler(e);
+                                        handleDateChange(e);
+                                      }}
                                 />
                                 <span className="non-valid"></span>
                         </div>
