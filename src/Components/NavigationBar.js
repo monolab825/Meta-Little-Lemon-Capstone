@@ -7,7 +7,7 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 const Header = () => {
 
     return (
-       <body className="navigation">
+       <div className="navigation">
         <header>
             <div class="logo">
             <img src={LittleLemon} alt="Little Lemon Logo"/>
@@ -23,7 +23,7 @@ const Header = () => {
             </ul>
             </nav>
         </header>
-        </body>
+        </div>
     )
 }
 

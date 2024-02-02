@@ -5,7 +5,7 @@ import Adrian from "../Pictures/Mario and Adrian b.jpg"
 const About = () => {
 
     return (
-        <body className="container2">
+        <div className="container2">
             <div className="about">
                 <article>
                     <h1>Little Lemon</h1>
@@ -21,11 +21,17 @@ const About = () => {
                     </p>
                 </article>
                 <div class="owner-photos">
-                <img src={Mario} id="owner1" alt="The owners of the restaurant Mario and Adrian" />
-                <img src={Adrian} id="owner2" alt="The owners of the restaurant Mario and Adrian" />
+                <img
+                src={Mario}
+                id="owner1"
+                alt="The picture of the owners of Little Lemon restaurant - Mario and Adrian preparing dishes in their kitchen" />
+                <img
+                src={Adrian}
+                id="owner2"
+                alt="The picture of the owner of Little Lemon restaurant - Mario and Adrian preparing dishes in their kitchen" />
                 </div>
             </div>
-        </body>
+        </div>
     )
 }
 

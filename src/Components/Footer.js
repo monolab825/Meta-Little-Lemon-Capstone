@@ -7,7 +7,7 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 const Footer = () => {
     return (
         <footer className="footer">
-            <body className="footer-content">
+            <div className="footer-content">
                 <div id="logo2">
                     <img src={Logo} height={"100px"} alt="Little Lemon Logo"/>
                 </div>
@@ -39,7 +39,7 @@ const Footer = () => {
                             <li><a href="https://www.linkedin.com" className="foot-link" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
                         </ul>
                 </div>
-            </body>
+            </div>
         </footer>
     )
   };

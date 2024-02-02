@@ -2,13 +2,13 @@ import React from "react";
 
 const Testimony = ({ rating, profileImageSrc, ratingImageSrc, profile, review }) => {
   return (
-    <body className="testimony-card">
+    <div className="testimony-card">
         <h2 id="rating">
             {rating}
-            <img src={ratingImageSrc}/>
+            <img src={ratingImageSrc} alt={`Rating: ${rating}`} />
         </h2>
         <div className="profile-photo">
-        <img src={profileImageSrc}/>
+        <img src={profileImageSrc} alt={`Profile: ${profile}`} />
         </div>
         <h2 id="profile-name">
           {profile}
@@ -16,7 +16,7 @@ const Testimony = ({ rating, profileImageSrc, ratingImageSrc, profile, review })
           <p id="review">
           {review}
           </p>
-    </body>
+    </div>
  );
 };
 

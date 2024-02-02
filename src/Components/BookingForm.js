@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import React, { useReducer, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookingForm = (props) => {
     const { availableTimes, updateTimes, submitForm } = props;
@@ -46,16 +48,30 @@ const getIsFormValid = () => {
         return date && isTimeValid && isGuestsValid && name && validateEmail(email);
      };
 
-      const handleSubmit = (e) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (getIsFormValid()) {
-            submitForm(formData);
-            alert('Form Submitted!');
-            clearForm();
+            submitFormData();
           } else {
-            alert('Form contains errors. Please check and try again.');
+            toast.error('Form contains errors. Please check and try again.');
           }
         };
+        const submitFormData = async () => {
+            setIsLoading(true); // Set loading state before submitting
+          
+            try {
+              await submitForm(formData);
+              toast.success('Form Submitted!');
+              clearForm();
+            } catch (error) {
+              console.error('Form submission failed:', error);
+              toast.error('Form submission failed. Please try again.');
+            } finally {
+              setIsLoading(false); // Reset loading state after submission
+            }
+          };
 
       const onChangeHandler = (e) => {
         const { name, value } = e.target;
@@ -85,7 +101,7 @@ const getIsFormValid = () => {
 
       const handleDateChange = (e) => {
         const selectedDate = e.target.value;
-        props.updateTimes(selectedDate);
+        props.updateTimes(selectedDate); // Trigger the parent component's updateTimes function
       };
 
       const handleBlur = (e) => {
@@ -192,10 +208,11 @@ const getIsFormValid = () => {
                     <fieldset>
                         <div className="field_date">
                         <label htmlFor="date">Date</label>
-                                    <span className="non-valid">{errors.date}</span>
+                                    <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.date}</span>
                                 <input
                                     type="date"
                                     name="date"
+                                    id="date"
                                     required
                                     value={formData.date}
                                     onChange={(e) => {
@@ -207,10 +224,11 @@ const getIsFormValid = () => {
                         </div>
                         <div className="field_time">
                                 <label htmlFor="time">Choose time</label>
-                                <span className="non-valid">{errors.time}</span>
+                                <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.time}</span>
                                 <select
                                 name="time"
                                 id="time"
+                                required
                                 value={formData.time}
                                 onChange={onChangeHandler}
                                 onBlur={handleBlur}
@@ -225,11 +243,12 @@ const getIsFormValid = () => {
                         </div>
                         <div className="field_guests">
                         <label htmlFor="guests">Guests</label>
-                            <span className="non-valid">{errors.guests}</span>
+                            <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.guests}</span>
                                 <input
                                     type="number"
                                     placeholder="2"
                                     name="guests"
+                                    id='guests'
                                     required
                                     value={formData.guests}
                                     onChange={onChangeHandler}
@@ -243,7 +262,8 @@ const getIsFormValid = () => {
                                     name="occasion"
                                     id="occasion"
                                     value={formData.occasion}
-                                    onChange={onChangeHandler}>
+                                    onChange={onChangeHandler}
+                                    aria-labelledby="occasion-label">
                                         <option value="select">Select occasion</option>
                                         <option value="none">None</option>
                                         <option value="birthday">Birthday</option>
@@ -253,11 +273,13 @@ const getIsFormValid = () => {
                                     </div>
                         <div className="field">
                         <label htmlFor="name">Full Name *</label>
-                                    <span className="non-valid">{errors.name}</span>
+                                    <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.name}</span>
                             <input
                                 type="text"
                                 placeholder="Matylda Kowalski"
                                 name="name"
+                                id='name'
+                                required
                                 value={formData.name}
                                 onChange={onChangeHandler}
                                 onBlur={handleBlur}
@@ -265,11 +287,13 @@ const getIsFormValid = () => {
                         </div>
                         <div className="field">
                             <label htmlFor="email">Email *</label>
-                            <span className="non-valid">{errors.email}</span>
+                            <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.email}</span>
                             <input
                                 type="text"
                                 placeholder="text@email.com"
                                 name="email"
+                                id='email'
+                                required
                                 value={formData.email}
                                 onChange={onChangeHandler}
                                 onBlur={handleBlur}
@@ -282,6 +306,7 @@ const getIsFormValid = () => {
                                 type="tel"
                                 placeholder="+233000000000"
                                 name="telephone"
+                                id='telephone'
                                 value={formData.telephone}
                                 onChange={onChangeHandler}
                             />
@@ -292,13 +317,22 @@ const getIsFormValid = () => {
                                 type="text"
                                 placeholder="enter your requests here"
                                 name="request"
+                                id='request'
                                 value={formData.request}
                                 onChange={onChangeHandler}
                             />
                             <span className="non-valid"></span>
                         </div>
                             <div className="button-container">
-                            <button className="button" type='submit' disabled={!getIsFormValid()}>Reserve a table</button>
+                            <button
+                            className="button"
+                            type="submit"
+                            disabled={!getIsFormValid() || isLoading}
+                            aria-live="assertive"
+                            aria-atomic="true"
+                            >
+                            {isLoading ? 'Submitting...' : 'Reserve a table'}
+                            </button>
                             </div>
                         </div>
                         </div>

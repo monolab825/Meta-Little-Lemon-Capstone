@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Intro = () => {
 
     return (
-        <body className="container">
+        <div className="container">
             <div className="text-photo">
                 <article>
                 <h1>Little Lemon</h1>
@@ -18,11 +18,11 @@ const Intro = () => {
                 <button className="button">Reserve a table</button>
                 </Link>
             </article>
-                <div class="food-photo">
+                <div className="food-photo">
                     <img src={restaurantfood} alt="Picture of restaurant food" />
                 </div>
             </div>
-        </body>
+        </div>
     )
 }
 

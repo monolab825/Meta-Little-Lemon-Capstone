@@ -7,6 +7,7 @@ body, h1, h2, p, ul, li {
 
 /* Navigation */
 
+.navigation
 header {
   display: flex;
   justify-content: center;
@@ -534,12 +535,20 @@ div .meals {
   text-align: center;
 }
 
+input:focus {
+  outline: 2px solid #f4ce14 ; /* Change the color or style as needed */
+}
+
 /* Confirmation page */
 
 .congrats-container {
   padding: 6vw;
   margin-inline: 10vw;
   text-align: center;
+}
+
+.congrats h1 {
+  margin-bottom: 2vw;
 }
 
 .button_sec {
@@ -562,7 +571,6 @@ button:disabled:hover {
   color: #666666;
   cursor: not-allowed;
 }
-
 
 button:disabled:hover {
   border: 1px solid #999999;

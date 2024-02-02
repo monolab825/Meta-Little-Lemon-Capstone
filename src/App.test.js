@@ -23,3 +23,92 @@ test('availableTimes returns the correct expected value', () => {
   expect(result).toEqual(expectedTimes);
 });
 
+test('Date input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const dateInput = screen.getByLabelText('Date');
+  expect(dateInput).toHaveAttribute('required');
+});
+
+test('Time input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const timeInput = screen.getByLabelText('Choose time');
+  expect(timeInput).toHaveAttribute('required');
+});
+
+test('Guests input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const guestsInput = screen.getByLabelText('Guests');
+  expect(guestsInput).toHaveAttribute('type', 'number');
+  expect(guestsInput).toHaveAttribute('placeholder', '2');
+  expect(guestsInput).toHaveAttribute('required');
+});
+
+test('Occasion select has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const occasionSelect = screen.getByLabelText('Occasion (optional)');
+  expect(occasionSelect).toHaveAttribute('name', 'occasion');
+});
+
+test('Name input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const nameInput = screen.getByLabelText('Full Name *');
+  expect(nameInput).toHaveAttribute('type', 'text');
+  expect(nameInput).toHaveAttribute('placeholder', 'Matylda Kowalski');
+  expect(nameInput).toHaveAttribute('required');
+});
+
+test('Email input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const emailInput = screen.getByLabelText('Email *');
+  expect(emailInput).toHaveAttribute('type', 'text');
+  expect(emailInput).toHaveAttribute('placeholder', 'text@email.com');
+  expect(emailInput).toHaveAttribute('required');
+});
+
+test('Telephone input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const telephoneInput = screen.getByLabelText('Telephone (optional)');
+  expect(telephoneInput).toHaveAttribute('type', 'tel');
+  expect(telephoneInput).toHaveAttribute('placeholder', '+233000000000');
+});
+
+test('Request input has the correct attributes', () => {
+  render(
+    <BrowserRouter>
+      <BookingForm onUpdateFormData={() => {}} availableTimes={[]} onUpdateTimes={() => {}} />
+    </BrowserRouter>
+  );
+  const requestInput = screen.getByLabelText('Special Requests (optional)');
+  expect(requestInput).toHaveAttribute('type', 'text');
+  expect(requestInput).toHaveAttribute('placeholder', 'enter your requests here');
+});
+
+

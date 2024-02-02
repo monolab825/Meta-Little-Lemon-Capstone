@@ -2,9 +2,9 @@ import React from "react";
 
 const Meal = ({ title, price, description, imageSrc }) => {
   return (
-    <body className="meal-card">
+    <div className="meal-card">
         <div id="image">
-          <img src={imageSrc}/>
+          <img src={imageSrc} alt={`Picture of ${title}`}/>
         </div>
         <div className="description">
             <h1>
@@ -12,11 +12,11 @@ const Meal = ({ title, price, description, imageSrc }) => {
             <h2>
             {description}
             </h2>
-            <p>
+            <div>
             <button className="button" id="button3">Order for Delivery</button>
-            </p>
+            </div>
         </div>
-    </body>
+    </div>
  );
 };
 

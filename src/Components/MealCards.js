@@ -17,7 +17,7 @@ const meals = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
 
     },
-    {
+    { 
         getImageSrc: () => require("../Pictures/lemon dessert.jpg"),
         title: "Lemon cake",
         price: "$12.99",
@@ -27,7 +27,7 @@ const meals = [
 ]
 const MealCards = () => {
     return (
-        <body className="meal-cards">
+        <div className="meal-cards">
             <h1 id="specials">
             This Week's Specials
             <button className="button" id="button2">Order Online</button>
@@ -43,7 +43,7 @@ const MealCards = () => {
                 />
             ))}
             </div>
-        </body>
+        </div>
     );
 }
 
