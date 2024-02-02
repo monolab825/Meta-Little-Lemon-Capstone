@@ -85,7 +85,7 @@ const getIsFormValid = () => {
 
       const handleDateChange = (e) => {
         const selectedDate = e.target.value;
-        props.updateTimes(selectedDate); // Trigger the parent component's updateTimes function
+        props.updateTimes(selectedDate);
       };
 
       const handleBlur = (e) => {
