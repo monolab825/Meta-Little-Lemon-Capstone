@@ -4,10 +4,10 @@ import Pictureplacement from '../Components/Pictureplacement';
 import NavigationBar from "../Components/NavigationBar"
 import BookingForm from '../Components/BookingForm';
 import Footer from "../Components/Footer";
-import {fetchAPI, submitAPI} from "../Components/Api"
+import {fetchAPI, submitAPI} from "../Api"
 import { useNavigate } from 'react-router-dom';
 
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
   switch (action.type) {
     case 'update_times':
       return fetchAPI(new Date(action.payload));
@@ -21,15 +21,13 @@ const BookingPage = () => {
   const initialState = fetchAPI(new Date());
   const [availableTimes, dispatch] = useReducer(updateTimes, initialState);
 
-  // Function to update times based on a new date
   const handleDateChange = (date) => {
-    // Dispatch the action to update availableTimes
     dispatch({ type: 'update_times', payload: date });
   };
 
   const submitForm = (formData) => {
     if (submitAPI(formData)) {
-      navigate('/confirmed');
+      navigate('/confirmation');
     }
   };
 

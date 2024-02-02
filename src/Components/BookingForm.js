@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import React, { useReducer, useState, useEffect } from 'react';
 
 const BookingForm = (props) => {
+    const { availableTimes, updateTimes, submitForm } = props;
+  
     const [formData, setFormData] = useState({
         date: '',
         time: 'select',
@@ -10,6 +12,7 @@ const BookingForm = (props) => {
         name: '',
         email: '',
         telephone: '',
+        submitForm,
       });
 
        const validateEmail = (email) => {
@@ -28,9 +31,10 @@ const getIsFormValid = () => {
 
       const handleSubmit = (e) => {
         e.preventDefault();
+        submitForm(formData);
         alert('Form Submitted!');
         clearForm();
-      };
+    };
     
       const onChangeHandler = (e) => {
         const { name, value } = e.target;
