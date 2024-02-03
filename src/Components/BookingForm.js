@@ -59,8 +59,8 @@ const getIsFormValid = () => {
           }
         };
         const submitFormData = async () => {
-            setIsLoading(true); // Set loading state before submitting
-          
+            setIsLoading(true);
+
             try {
               await submitForm(formData);
               toast.success('Form Submitted!');
@@ -69,7 +69,7 @@ const getIsFormValid = () => {
               console.error('Form submission failed:', error);
               toast.error('Form submission failed. Please try again.');
             } finally {
-              setIsLoading(false); // Reset loading state after submission
+              setIsLoading(false);
             }
           };
 
@@ -101,7 +101,7 @@ const getIsFormValid = () => {
 
       const handleDateChange = (e) => {
         const selectedDate = e.target.value;
-        props.updateTimes(selectedDate); // Trigger the parent component's updateTimes function
+        props.updateTimes(selectedDate);
       };
 
       const handleBlur = (e) => {
@@ -124,7 +124,7 @@ const getIsFormValid = () => {
               }));
             }
             break;
-      
+
           case 'time':
             if (value === 'select') {
               setErrors((prevErrors) => ({
@@ -138,7 +138,7 @@ const getIsFormValid = () => {
               }));
             }
             break;
-      
+
           case 'guests':
             const guestsValue = parseInt(value, 10);
             if (isNaN(guestsValue) || guestsValue < 1) {
@@ -158,7 +158,7 @@ const getIsFormValid = () => {
               }));
             }
             break;
-      
+
           case 'name':
             if (value === '') {
               setErrors((prevErrors) => ({
@@ -172,7 +172,7 @@ const getIsFormValid = () => {
               }));
             }
             break;
-      
+
           case 'email':
             if (
               !String(value)
@@ -246,7 +246,7 @@ const getIsFormValid = () => {
                             <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.guests}</span>
                                 <input
                                     type="number"
-                                    placeholder="2"
+                                    placeholder="-"
                                     name="guests"
                                     id='guests'
                                     required
@@ -256,7 +256,7 @@ const getIsFormValid = () => {
                                 />
                         </div>
                         <div className="field_occasion">
-                        <label htmlFor="occasion">Occasion (optional)</label>
+                        <label id="occasion-label" htmlFor="occasion">Occasion (optional)</label>
                                 <div className="options">
                                     <select
                                     name="occasion"
@@ -276,7 +276,7 @@ const getIsFormValid = () => {
                                     <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.name}</span>
                             <input
                                 type="text"
-                                placeholder="Matylda Kowalski"
+                                placeholder="Enter your name"
                                 name="name"
                                 id='name'
                                 required
@@ -290,7 +290,7 @@ const getIsFormValid = () => {
                             <span className="non-valid" aria-live="polite" aria-atomic="true">{errors.email}</span>
                             <input
                                 type="text"
-                                placeholder="text@email.com"
+                                placeholder="example@email.com"
                                 name="email"
                                 id='email'
                                 required
@@ -315,7 +315,7 @@ const getIsFormValid = () => {
                             <label htmlFor="request">Special Requests (optional)</label>
                             <input
                                 type="text"
-                                placeholder="enter your requests here"
+                                placeholder="Any special requirements"
                                 name="request"
                                 id='request'
                                 value={formData.request}

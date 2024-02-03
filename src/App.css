@@ -56,7 +56,7 @@ font-weight: bold;
   }
 
   nav {
-    margin-top: 10px; /* Adjust the space between logo and navigation on smaller screens */
+    margin-top: 10px; 
   }
 
   nav ul {
@@ -325,15 +325,15 @@ div .meals {
     margin-left: 20vw;
   }
   #owner1 {
-    width: 60%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    width: 60%;
+    height: auto;
     position: relative;
     left: 0;
     transform: translateX(35%);
   }
   #owner2 {
-    width: 60%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    width: 60%;
+    height: auto;
     position: absolute;
     left: 4vw;
     top: 6vw;
@@ -354,15 +354,15 @@ div .meals {
     margin-left: 20vw;
   }
   #owner1 {
-    width: 80%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    width: 80%;
+    height: auto;
     position: relative;
     left: 0;
     transform: translateX(10%);
   }
   #owner2 {
-    width: 80%; /* Make the images fill the width of their container on smaller screens */
-    height: auto; /* Allow the height to adjust proportionally based on the image's aspect ratio */
+    width: 80%;
+    height: auto;
     position: absolute;
     left: 4vw;
     top: 6vw;
@@ -536,7 +536,7 @@ div .meals {
 }
 
 input:focus {
-  outline: 2px solid #f4ce14 ; /* Change the color or style as needed */
+  outline: 2px solid #f4ce14;
 }
 
 /* Confirmation page */

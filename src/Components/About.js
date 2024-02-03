@@ -28,7 +28,7 @@ const About = () => {
                 <img
                 src={Adrian}
                 id="owner2"
-                alt="The picture of the owner of Little Lemon restaurant - Mario and Adrian preparing dishes in their kitchen" />
+                alt="The picture of the owners of Little Lemon restaurant - Mario and Adrian preparing dishes in their kitchen" />
                 </div>
             </div>
         </div>

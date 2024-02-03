@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import BookingForm from './Components/BookingForm';
 import { BrowserRouter } from 'react-router-dom';
-import { act } from 'react-dom/test-utils';
 
 
 test('Renders the BookingForm heading', () => {
@@ -51,7 +50,7 @@ test('Guests input has the correct attributes', () => {
   );
   const guestsInput = screen.getByLabelText('Guests');
   expect(guestsInput).toHaveAttribute('type', 'number');
-  expect(guestsInput).toHaveAttribute('placeholder', '2');
+  expect(guestsInput).toHaveAttribute('placeholder', '-');
   expect(guestsInput).toHaveAttribute('required');
 });
 
@@ -73,7 +72,7 @@ test('Name input has the correct attributes', () => {
   );
   const nameInput = screen.getByLabelText('Full Name *');
   expect(nameInput).toHaveAttribute('type', 'text');
-  expect(nameInput).toHaveAttribute('placeholder', 'Matylda Kowalski');
+  expect(nameInput).toHaveAttribute('placeholder', 'Enter your name');
   expect(nameInput).toHaveAttribute('required');
 });
 
@@ -85,7 +84,7 @@ test('Email input has the correct attributes', () => {
   );
   const emailInput = screen.getByLabelText('Email *');
   expect(emailInput).toHaveAttribute('type', 'text');
-  expect(emailInput).toHaveAttribute('placeholder', 'text@email.com');
+  expect(emailInput).toHaveAttribute('placeholder', 'example@email.com');
   expect(emailInput).toHaveAttribute('required');
 });
 
@@ -108,7 +107,7 @@ test('Request input has the correct attributes', () => {
   );
   const requestInput = screen.getByLabelText('Special Requests (optional)');
   expect(requestInput).toHaveAttribute('type', 'text');
-  expect(requestInput).toHaveAttribute('placeholder', 'enter your requests here');
+  expect(requestInput).toHaveAttribute('placeholder', 'Any special requirements');
 });
 
 
